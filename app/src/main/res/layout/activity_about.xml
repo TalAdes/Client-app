@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/nissan350"
+    tools:context="com.example.secondapp.controller.fragments.AboutUsActivity">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="425dp"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="594dp">
+
+        <TextView
+            android:id="@+id/aboutT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+
+            android:layout_marginTop="80dp"
+            android:layout_weight="1"
+            android:text="Hello to our customers,
+We at the rental company maintain excellent reliability and service under strict international standards,
+We hope you enjoy our services and we will be happy to meet any situation."
+            android:textColor="#000000"
+            android:textSize="18sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Connect Us:"
+            android:textColor="@color/liteblue"
+            android:textSize="25sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Our Phone :"
+            android:textColor="@color/liteblue"
+            android:textSize="24sp"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="     " />
+
+        <TextView
+            android:id="@+id/phoneC"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="02-7689055"
+            android:textColor="@color/liteblue"
+            android:autoLink="phone"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email :   "
+            android:textColor="@color/liteblue"
+            android:textSize="24sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/emailC"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:autoLink="email"
+            android:text="TakeGo@gmail.com"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="24sp"
+            />
+
+</LinearLayout>
+</LinearLayout>
