@@ -13,15 +13,6 @@ public class Car
     private String model;
     private String urlImage;
 
-    /*public Car(long idBranch, long idTypeModel, int kilometer, long idCar, String model, String urlImage) {
-        this.idBranch = idBranch;
-        this.idTypeModel = idTypeModel;
-        this.kilometer = kilometer;
-        this.idCar = idCar;
-        this.model = model;
-        this.urlImage = urlImage;
-    }*/
-
     public String getUrlImage() {
         return urlImage;
     }

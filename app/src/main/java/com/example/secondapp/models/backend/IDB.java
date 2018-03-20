@@ -17,7 +17,7 @@ import java.util.List;
 
 public interface IDB {
     void dummyOperation();
-
+    void setClient(int client);
     String addClient(ContentValues values);
     String addOrder(ContentValues values);
 

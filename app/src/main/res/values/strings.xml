@@ -3,4 +3,6 @@
     <string name="user_name">User name</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
+    <string name="order_message_order_button">Order</string>
+    <string name="order_message_cancel_button">Cancel</string>
 </resources>

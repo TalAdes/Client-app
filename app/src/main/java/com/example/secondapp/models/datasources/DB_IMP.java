@@ -7,7 +7,7 @@ import android.os.AsyncTask;
 
 import com.example.secondapp.models.backend.Consts;
 import com.example.secondapp.models.backend.IDB;
-import com.example.secondapp.models.entities.Branch;
+import com.example.secondapp.models.entities.Client;
 import com.example.secondapp.models.entities.Car;
 import com.example.secondapp.models.entities.Order;
 
@@ -31,9 +31,29 @@ import static com.example.secondapp.models.backend.Consts.httpGet;
  * Created by טל on 17-Jan-18.
  */
 
+
+
 public class DB_IMP implements IDB {
+    public static Client client;
+
+    @Override
+    public void setClient(int client) {
+        try {
+            this.client = Consts.getMyClient(client);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     @Override public void dummyOperation() {
         int[] a = new int[4];
+        int[] b = new int[4];
+        int[] c = new int[4];
+        int[] d = new int[4];
+        int[] f = new int[4];
+        int[] g = new int[4];
+        int[] h = new int[4];
+
 
         /*
         this op made to help debug AsyncTasks
@@ -62,8 +82,7 @@ public class DB_IMP implements IDB {
     @Override public Cursor getBranchesWhereCarModelAvailable(int id) throws Exception {return Consts.getBranchesWhereCarModelAvailable(id);}
     @Override public Cursor getOpenOrders()  throws Exception {return Consts.getOpenOrders();}
 
-    @Override
-    public void closeOrder(int orderID, int kilometers) throws Exception {
+    @Override public void closeOrder(int orderID, int kilometers) throws Exception {
         JSONArray array = new JSONObject(httpGet("http://tades.vlab.jct.ac.il/getOrderByID.php?"+"orderID=\""+orderID+"\"")).getJSONArray("order");
         JSONObject obj = array.getJSONObject(0);
         Map<String,String> map = new HashMap<>();
@@ -90,8 +109,7 @@ public class DB_IMP implements IDB {
     }
 
 
-    @Override
-    public Order closedWithin10Seconds() {
+    @Override public Order closedWithin10Seconds() {
         return null;
     }
 
@@ -99,8 +117,7 @@ public class DB_IMP implements IDB {
         return null;
     }
 
-    @Override
-    public  HashMap<Long,List<Car>> getMapAvailableCarsByBranch() throws Exception
+    @Override public  HashMap<Long,List<Car>> getMapAvailableCarsByBranch() throws Exception
     {
         Cursor Branches = Consts.getBranches();
         HashMap<Long,List<Car>> mapIdBranchWithCar = new HashMap<Long,List<Car>>();

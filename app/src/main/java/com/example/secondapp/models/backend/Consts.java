@@ -2,11 +2,10 @@ package com.example.secondapp.models.backend;
 
 import android.database.Cursor;
 import android.database.MatrixCursor;
-import android.net.Uri;
 
 import com.example.secondapp.models.entities.Branch;
 import com.example.secondapp.models.entities.Car;
-import com.example.secondapp.models.entities.Order;
+import com.example.secondapp.models.entities.Client;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -18,7 +17,6 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -412,6 +410,47 @@ public class Consts {
         }
         return cars;
 
+    }
+
+    public static boolean vallidLogin(String id,String name) throws Exception
+    {
+        Cursor cursor = getClients();
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast())
+        {
+            if(cursor.getString(cursor.getColumnIndexOrThrow(ClientConst.ID)).equals(id) && cursor.getString((cursor.getColumnIndexOrThrow(ClientConst.FIRST_NAME))).equals(name))
+            {
+                return true;
+            }
+            cursor.moveToNext();
+
+        }
+        return false;
+    }
+
+    public static Client getMyClient(long id)throws Exception
+    {
+        Cursor cursor = getClients();
+        Client client = new Client();
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast())
+        {
+            if(cursor.getString(cursor.getColumnIndexOrThrow(ClientConst.ID)).equals(id))
+            {
+                client.setFname(cursor.getString(cursor.getColumnIndexOrThrow(ClientConst.FIRST_NAME)));
+                client.setLname(cursor.getString(cursor.getColumnIndexOrThrow(ClientConst.LAST_NAME)));
+                client.setId(cursor.getLong(cursor.getColumnIndexOrThrow(ClientConst.ID)));
+                client.setEmail(cursor.getString(cursor.getColumnIndexOrThrow(ClientConst.EMAIL)));
+                client.setPhoneNum(cursor.getString(cursor.getColumnIndexOrThrow(ClientConst.PHONE_NUMBER)));
+                client.setNumCredit(cursor.getLong(cursor.getColumnIndexOrThrow(ClientConst.NUM_CREDIT)));
+                return client;
+            }
+
+            cursor.moveToNext();
+
+        }
+
+        return null;
     }
 
     public static ArrayList<Branch> CursorToListBranch(Cursor cursor){

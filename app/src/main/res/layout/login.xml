@@ -34,7 +34,7 @@
                 android:inputType="textEmailAddress"
                 android:maxLines="1"
                 android:padding="8dp"
-                android:textColor="@color/colorAccent"
+                android:textColor="@color/colorPrimaryDark"
                 android:textColorHint="#fff" />
 
             <View
@@ -55,7 +55,7 @@
                 android:inputType="textPassword"
                 android:maxLines="1"
                 android:padding="8dp"
-                android:textColor="@color/colorAccent"
+                android:textColor="@color/colorPrimaryDark"
                 android:textColorHint="#fff" />
 
             <View
@@ -77,6 +77,7 @@
                 android:textSize="23sp" />
 
             <Button
+                android:id="@+id/createBut"
                 style="@style/Base.TextAppearance.AppCompat.Body1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

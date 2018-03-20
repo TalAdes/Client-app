@@ -9,7 +9,7 @@ import com.example.secondapp.models.datasources.DB_IMP;
 public class Factory {
     static IDB manager = null;
 
-    public static IDB getMnager(){
+    public static IDB getManager(){
         if(manager == null)
             manager = new DB_IMP();
         return manager;

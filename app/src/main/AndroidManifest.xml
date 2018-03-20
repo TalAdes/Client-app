@@ -17,16 +17,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="false"
         android:theme="@style/AppTheme">
-        <activity android:name=".controller.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        <activity android:name=".controller.MainActivity"/>
+        <activity android:name=".controller.LoginActivity">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
         </activity>
-        <activity android:name=".controller.fragments.AboutUsActivity" />
-        <activity android:name=".controller.fragments.ListBranch" />
-        <activity android:name=".controller.LoginActivity" />
         <activity android:name=".controller.NewAccountActivity" />
         <activity android:name=".controller.NewOrderActivity" />
 
@@ -34,7 +31,6 @@
             android:name=".models.backend.Services"
             android:exported="false" />
 
-        <activity android:name=".controller.fragments.ShowAllBranches"></activity>
     </application>
 
 </manifest>

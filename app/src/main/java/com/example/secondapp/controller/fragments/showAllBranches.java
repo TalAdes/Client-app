@@ -32,7 +32,7 @@ public class showAllBranches extends android.support.v4.app.Fragment {
     private SearchView searchCity;
     private ArrayList<Branch> branches;
 
-    IDB db = Factory.getMnager();
+    IDB db = Factory.getManager();
 
 
     @Override
